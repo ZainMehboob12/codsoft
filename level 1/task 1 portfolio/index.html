@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <base href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Zain's PortFolio</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+
+</head>
+
+<body>
+    <div class="container-flex">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" id="home">Zain's Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#profile">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/services']"
+                                routerLinkActive="router-link-active">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                        <a href="https://www.linkedin.com/in/zain-mehboob-567501179"
+                            style="text-decoration: none; color: azure;">
+
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAB5CAMAAAAqJH57AAAAYFBMVEUAAAD////+/v5jY2P5+flMTEwnJyc0NDSwsLDIyMjy8vJmZmbc3Nzv7+8sLCwTExPR0dG3t7d+fn6UlJTl5eUdHR2oqKhYWFigoKBAQEBycnKJiYkICAiamprAwMB4eHh9lpQVAAAFAUlEQVRoge1aiXbaMBBkBcQcNsHEHM3V///L2ta1klYrEYzyXp83JbSx8Hh29pLSxWK22Wabbbap7PVQVS+/gHvd1M1u1xxvh7K46xqMtZ8FgS+ATeyLAX/3aEKAkN8FwKkQ8A18W12LAK9HxtgAutcSyMeAcm9vBYDXEHIW0BRA3vQ4TmTL1/OV/qwDygNn+Ho68kszUFRE0Vv7dORqR3Dubft05MMOpHuFkORlRSmAPHg7MFHC20M6ezqP/yyQ0DcvqyQ+rJ+PXJFZVT8feOxUoRXpVi8Ans4CjiWAF4tTwLj5UwZ58YXq9Qhcpj0Pdlph5LpAXBurWpNau7eSE2Bvh4/vTqzqzXtZ2Nlmm4228/L0dWk3l7e/15LF4HrpcM3vLsvsj7ab0M7oehUuaPUW//NUC1T1ZSXsvqo8ZGoQw4cHa2KBuvX7uO8ed6ByaJV7UWjyhinbLcxTr3xkdVs1vyjk1xbUzConGY0+rDvmNFp3Bhuf2kfWW2szHw/IVQdmXBb6zbxWGR3A6c2Sd8hZPxUYzmuzRwD3BWqCT09U7lggKG8LOxnLBdVivcLPo65bAoMlWQNypdKT4GxYjUsOVQOYpr2GBliRGjGsxjqICM5GUvm3qtb7Ieci9stw9JCF7MR3SudVCxAS9X7Qr7hkccbPGyA74e9Pyd4mGK/lz/X0erSTJHVWPlUaIs5gfuSoPLh/k0AW5slV0UjqTAhL6Nz/yeBsP0Ah+xHspXCEef8DNqnBh/6pzn60DMbuk3BURKundqanJPKFm/Hm6xzFtTojcCqrhFmFq511hLCPh6Xnjm+tNObhyV6FldXdY9Udv9ttvTNVzon8AZlLadD1wd4zjDDUDdS3/q25XeUB6Z9TDZqxk9X8UQ/WLsJZ4D5o7IbPZT/8CFTWMUKDbW26NHjIZK0Ab97aA76q/QcNU8bAXUtnFe7/klQw6H0gd6DqwDSs4ISG0VliAx05R8rb3NmtCguchVQ+u6lEybf3kcc3ZghOcxbOY433I4fLGlV/s5RFNmVCr450DF3i+gXkaOn9DigSD/dwdirkeNcjuYt5B8I4ZH1HVmc3cujKNEyFbhd4VGdwGA8veqw8dyi4cnS2okQ5O82qf4skae0mCRAF507OQjg0zL7Kt6OXy2mdbYXgdEZEIshbHYuge9t9nMkdnWlQHOftD2Jb8LGNuyRwnJV/hK17D3LGj5XgfJfO3hRDZBUun5k66xbzGGeBH21CnTGo5EbtMXCXZJCFGxPprLIfiHUMx3jOTqGdonraaTqpMyLOd0nFOd4lscyC4xwO3I9ytl9ZOttCllU9NW9uMoBUViml7bQ4nc583VbQmTr7k0FEZ9slEzoLo/E0OptZn6/b7qYhpbPuaXHONsgSWaVr/M90jpx72gCctEtinRPTEOttXIPT1dOnnJp6k/3Z9vEcnQG7M3LWm6GzW2Ufn4aEdffEOqM6T08GLpOUzoZxTvXEq8msshcTOoPtlBN2SQPPVU/tvXydUfjS+2ehekGmt1XMpJCd3s+frOfobD+Qt8fguqSZq35DZzQbTDQNmRIRr566JqW9DXaPIe6tnolpKFFJBHJQXpdEnZCfhoCdDJDK6vVol8zmfH+XNJEd71UIPKmzDsWseVuXE8LbHuPpOIeGj0mZ3wLnIDNH6/tlYHt83HUOry8j/+93TdzqN/4f/GyzzTbb/2X/AEnpLZ5OLldxAAAAAElFTkSuQmCC"
+                                width="30px" height="30px">
+                            www.linkedin.com/in/zain-mehboob-567501179
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <div class="container-flex">
+            <app-header></app-header>
+            <div class="row">
+                <div class="col-md-3">
+                    <nav class="nav flex-column">
+
+
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-header bg-dark  text-info">
+                                <a class="nav-link active text-info" aria-current="true" href="#profile">My
+                                    Introduction</a>
+                            </div>
+
+                            <ul class="list-group list-group-flush ">
+                                <li class="list-group-item bg-dark text-info"><a class="nav-link text-info"
+                                        href="#summary">Summary</a></li>
+                                <li class="list-group-item bg-dark text-info"><a class="nav-link text-info"
+                                        href="#skills">Skills</a></li>
+                                <li class="list-group-item bg-dark text-info"><a class="nav-link text-info"
+                                        href="#certifications">Certifications</a></li>
+                                <li class="list-group-item bg-dark text-info"><a class="nav-link text-info"
+                                        href="#experience" tabindex="-1" aria-disabled="true">Experience</a></li>
+                            </ul>
+                        </div>
+
+
+
+                    </nav>
+
+                </div>
+                <div class="col-md-9">
+                    <h2><a class="text-dark" href="#profile">My Profile</a><span
+                            class="badge bg-secondary">Updated</span></h2>
+                    <div class="card">
+                        <h5 class="card-header card-dark bg-dark text-info" id="profile">Personnel Information</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5 class="card-title">Hi, I am Zain Mehboob!</h5>
+                                    <p class="card-text" style="text-align: justify;">I am a full stack developer with 1
+                                        year of
+                                        experience in
+                                        both application and presentation layers. I have worked on applications and
+                                        microservices deployed on IBM
+                                        Cloud. I am an avid user of IBM Watson Services and have worked on Watson
+                                        Assistant,
+                                        NLU, Sentiment analyzer
+                                        to name a few.</p>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <img class="card-title" src="./profilepic.png" width="350px" height="max-height">
+                                </div>
+                                <div class="col-md-5 ">
+                                    <div class="tbm">
+
+                                        <a href="https://www.linkedin.com/in/zain-mehboob-567501179"
+                                        class="btn btn-dark text-info">
+                                        <img src="latest-linkedin-black-logo.png" width="max-width" height="18px">
+                                        Go to my LinkedIn
+                                    </a>
+                                    <h6>
+                                        <a class="text-dark" href="https://www.linkedin.com/in/zain-mehboob-567501179">
+                                            www.linkedin.com/in/zain-mehboob-567501179
+
+                                        </a>
+                                    </h6>
+                                    <a href="mailto:zainmehboob12@gmail.com" class="btn btn-dark text-info"><img
+                                            src="Gmail_Logo_256px.png" width="max-width" height="18px">
+                                        Email
+                                    </a>
+                                    <h6 style="text-align: start;">
+                                        zainmehboob12@gmail.com
+                                    </h6>
+                                    <a href="tel:+923070484727" class="btn btn-dark text-info"><img
+                                            src="PngItem_1568222.png" width="max-width"
+                                            height="18px">Conatact
+                                        Me</a>
+                                    <h6>
+                                        +92 307 0484727
+                                    </h6>
+
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-header card-dark bg-dark text-info" id="summary">Summary</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Passionate Web Developer</h5>
+                            <p class="card-text" style="text-align: justify;">Full-stack developer with 1+ year of
+                                experience in building and maintaining web applications. Expertise in front-end
+                                development technologies such as HTML, CSS, and JavaScript, as well as back-end
+                                development technologies such as JavaScript, Django, and MySQL. Proven ability to work
+                                independently and as part of a team to deliver high-quality products on time and within
+                                budget.</p>
+                            <a href="https://github.com/ZainMehboob12" class="btn btn-dark text-info"><img
+                                    src="GitHub-Logo.png" width="max-width" height="18px"> Go to my
+                                GitHub Repository</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-header card-dark bg-dark text-info" id="skills">Skills</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Full Stack Development</h5>
+                            <p class="card-text" style="text-align: start;">HTML
+                                <strong>Intermediate-Level</strong><br>CSS
+                                <strong>Intermediate-Level</strong><br>JavaScript
+                                <strong>Intermediate-Level</strong><br>NodeJs <strong>Entry-Level</strong><br>MongoDB
+                                <strong>Beginner-Level</strong><br>ReactJs <strong>Beginner-Level</strong>
+                            </p>
+                            <h5 class="card-title">Cyber Securtiy Analyst</h5>
+                            <p class="card-text" style="text-align: start;">CSIM<br>IAM<br>IRT<br>IAAA<br>KAlI
+                                Linux<br>Forensics </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-header card-dark bg-dark text-info" id="certifications">Certifications</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Full Stack Development From IBM</h5>
+                            <p class="card-text" style="text-align: justify;"><strong>From August To Continued</strong>
+                            </p>
+                            <a href="#" class="btn btn-dark text-info">Go to my Full Stack Development Certification</a>
+                            <h5 class="card-title">Cyber Security Analyst From IBM</h5>
+                            <p class="card-text" style="text-align: justify;"><strong>From August To Continued</strong>
+                            </p>
+                            <a href="#" class="btn btn-dark text-info">Go to my CyberSecurity Analyst Certification</a>
+                            <h5 class="card-title">Systems Security Certified Practioner From (ISC)2</h5>
+                            <p class="card-text" style="text-align: justify;"><strong>From August To Continued</strong>
+                            </p>
+                            <a href="#" class="btn btn-dark text-info">Go to my SSCP Certification</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-header card-dark bg-dark text-info" id="experience">Experience</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Full Stack Developer at <img
+                                    src="./9e8d60f99ed8d50161eba95f62193278.jpg" width="max-width"
+                                    height="18px"></h5>
+                            <h6>From 01-Feb-2023 To Continued</h6>
+                            <p class="card-text" style="text-align: justify;">I am a full stack developer with 1 year of
+                                experience in
+                                both application and presentation layers. I have worked on applications and
+                                microservices deployed on IBM
+                                Cloud. I am an avid user of IBM Watson Services and have worked on Watson Assistant,
+                                NLU, Sentiment analyzer
+                                to name a few.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <app-footer></app-footer>
+
+        <section class="text-info" style="text-align:center;" id="recommendations">
+            <h1 class="text-dark">Recommendations</h1>
+            <div style="clear:both;"></div>
+            <div class="all_recommendations" id="all_recommendations">
+                <div class="recommendation">
+                    <span>&#8220;</span>
+                    Zain is a very quick learner and quickly grasps key concepts of Web development.
+                    He got a great attitude & she is an excellent team player.
+                    He has a curious mind and asks the right question.
+                    He takes initiative within a team and has potentials to lead the team.
+                    <span>&#8221;</span>
+                </div>
+                <div class="recommendation">
+                    <span>&#8220;</span>
+                    Working with Zain has been an awesome experience.
+                    He is highly knowledgable and always goes the extra step to make sure everything is right.
+                    For any future projects that need her expertise I would definitely want to work with her again.
+                    <span>&#8221;</span>
+                </div>
+                <div class="recommendation">
+                    <span>&#8220;</span>
+                    I had worked along with Zain during the initial phase of our venture which needed Web development.
+                    He is a committed resource who has in depth knowledge about the domain.
+                    He will be an asset for any organisation!
+                    <span>&#8221;</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendation Form -->
+        <section id="contact">
+            <div class="flex_center">
+                <fieldset>
+                    <legend class="introduction">Leave a Recommendation</legend>
+                    <input type="text" placeholder="Name (Optional)"> <br />
+                    <textarea id="new_recommendation" cols="500" rows="10" placeholder="Message"></textarea><br>
+                    <div class="flex_center">
+                        <button id="recommend_btn" onclick="addRecommendation()">Submit</button>
+                    </div>
+                </fieldset>
+            </div>
+        </section>
+
+        <div class="iconbutton">
+            <a href="#home">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="white" width="63px">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <!--Add the code here for the logo to appear and the icon to be actionable-->
+            </a>
+        </div>
+
+        <div class="popup" id="popup" class="flex_center">
+            <img src="html_finalprojimages/checkmark--outline.svg" />
+            <h3>Sucessfully added Recommendation</h3>
+            <button onclick="showPopup(false)">Ok</button>
+        </div>
+
+        <div class="container-flex">
+            <div class="card">
+                <div class="card-header bg-dark text-info">
+                    Quote
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>The best way to predict the future is to create it.</p>
+                        <footer class="blockquote-footer">Peter Drucker a famous <cite
+                                title="Source Title">Austrian-American consultant and educator
+                            </cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="card text-center bg-dark text-info">
+                <div class="card-header">
+                    Developed By Zain Mehboob
+                </div>
+
+            </div>
+        </div>
+        <div class="iconbutton">
+            <a href="#home">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="white" width="63px">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <!--Add the code here for the logo to appear and the icon to be actionable-->
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

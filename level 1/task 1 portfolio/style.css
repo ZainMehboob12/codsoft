@@ -1,0 +1,141 @@
+/* Recommendations */
+
+.all_recommendations {
+    display: flex;
+    align-items: center;
+    margin-left: 1in;
+    flex-direction: row;
+    flex-flow: wrap;
+    padding: 20px;
+}
+.tbm{
+    
+    padding-top: 250px;
+}
+
+.recommendation {
+    font-style: italic;
+    text-align: center;
+    width: max-content;
+    height: min-content;
+    padding: 1rem;
+    background-color: black;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--primary-shadow);
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid black;
+    font-size: 18px;
+}
+
+.recommendation span {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Scroll to Top Button */
+
+.iconbutton {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    cursor: pointer;
+}
+
+/* Form Pop-up */
+
+.popup {
+    width: 400px;
+    background-color: #e8bcf0;
+    border-radius: 3mm;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    position: fixed;
+    /* padding: 30px; */
+    visibility: hidden;
+}
+
+.popup img {
+    padding-top: 20px;
+}
+
+.popup button {
+    background-color: #fff;
+    border: 1px solid black;
+    color: white;
+    display: block;
+    border-radius: 6px;
+    text-align: center;
+    margin: 50px;
+    padding: 10px;
+    width: 2in;
+    font-size: 20px;
+    margin-left: 25%;
+}
+
+.popup button:hover {
+    background-color: black;
+    border: 2px solid #7600bc;
+    color: white;
+    display: block;
+    font-weight: bolder;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 25%;
+}
+
+/* Recommendation Form */
+
+input,
+textarea {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 10px;
+    width: 100%;
+}
+
+fieldset {
+    display: flexbox;
+    align-content: center;
+    justify-content: center;
+    padding: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: thin solid white;
+    width: 50%;
+}
+
+/* Buttons */
+
+button {
+    background-color: white;
+    border: 1px solid #7600bc;
+    color: black;
+    display: block;
+    border-radius: 6px;
+    text-align: center;
+    margin: 50px;
+    padding: 10px;
+    width: 2in;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: black;
+    border: 1px solid #7600bc;
+    color: #fff;
+    display: block;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+}
